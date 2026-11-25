@@ -1,10 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400" role="img" aria-label="Цветочный магазин Лепесток">
-  <rect width="640" height="400" fill="#d7e5da"/>
-  <circle cx="200" cy="180" r="50" fill="#c45c6a"/>
-  <circle cx="260" cy="150" r="40" fill="#e0b84d"/>
-  <circle cx="310" cy="190" r="45" fill="#7a9ed6"/>
-  <circle cx="240" cy="220" r="35" fill="#d46a78"/>
-  <rect x="235" y="230" width="20" height="100" rx="6" fill="#2f523c"/>
-  <text x="420" y="200" fill="#2f523c" font-family="Segoe UI, sans-serif" font-size="36" font-weight="700">Лепесток</text>
-  <text x="420" y="240" fill="#3d6b4f" font-family="Segoe UI, sans-serif" font-size="18">свежие букеты</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="Витрина цветочного магазина">
+  <rect width="640" height="420" fill="#dfe9db"/>
+  <rect x="40" y="260" width="560" height="120" fill="#c7d7c2"/>
+  <circle cx="220" cy="180" r="48" fill="#c45c6a"/>
+  <circle cx="290" cy="150" r="42" fill="#b84d5c"/>
+  <circle cx="350" cy="185" r="46" fill="#d46b78"/>
+  <circle cx="420" cy="160" r="38" fill="#e07a3d"/>
+  <rect x="280" y="210" width="14" height="120" fill="#4a6b45"/>
+  <rect x="320" y="220" width="12" height="110" fill="#5a7d54"/>
+  <rect x="360" y="215" width="12" height="115" fill="#4a6b45"/>
+  <text x="320" y="390" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#2f3d2c">Лепесток</text>
 </svg>

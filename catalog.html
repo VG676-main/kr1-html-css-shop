@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Каталог букетов магазина Лепесток: розы, тюльпаны, смешанные композиции.">
-  <title>Лепесток — каталог</title>
+  <meta name="description" content="Каталог букетов магазина Лепесток: розы, тюльпаны, сезонные композиции.">
+  <title>Каталог — Лепесток</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="page">
   <header class="header">
     <div class="container header__inner">
       <a class="header__logo" href="index.html">Лепесток</a>
-      <nav class="nav" aria-label="Основное меню">
+      <nav class="nav" aria-label="Основная навигация">
         <ul class="nav__list">
           <li><a class="nav__link" href="index.html">Главная</a></li>
           <li><a class="nav__link nav__link--active" href="catalog.html">Каталог</a></li>
@@ -19,13 +19,13 @@
           <li><a class="nav__link" href="order.html">Заявка</a></li>
           <li><a class="nav__link" href="contacts.html">Контакты</a></li>
           <li><a class="nav__link" href="index.html#advantages">Преимущества</a></li>
-          <li><a class="nav__link" href="index.html#popular">Популярное</a></li>
+          <li><a class="nav__link" href="index.html#popular">Популярные</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="section">
+  <main class="main">
     <div class="container">
       <nav class="breadcrumbs" aria-label="Хлебные крошки">
         <a href="index.html">Главная</a>
@@ -33,54 +33,47 @@
       </nav>
 
       <h1 class="section__title">Каталог букетов</h1>
-      <p class="section__text">Выберите готовый букет или перейдите к заявке.</p>
+      <p class="section__text">Выберите готовый букет или перейдите к оформлению заявки.</p>
 
       <div class="catalog-layout">
         <aside class="catalog-filters">
           <h2 class="catalog-filters__title">Категории</h2>
           <ul class="catalog-filters__list">
-            <li><a class="catalog-filters__link catalog-filters__link--active" href="catalog.html">Все букеты</a></li>
-            <li><a class="catalog-filters__link" href="catalog.html#roses">Розы</a></li>
-            <li><a class="catalog-filters__link" href="catalog.html#tulips">Тюльпаны</a></li>
-            <li><a class="catalog-filters__link" href="catalog.html#mix">Миксы</a></li>
+            <li><a href="#roses">Розы</a></li>
+            <li><a href="#tulips">Тюльпаны</a></li>
+            <li><a href="#mixed">Смешанные</a></li>
           </ul>
         </aside>
 
         <section class="catalog-products" aria-label="Список букетов">
           <div class="products">
-            <article class="product-card product-card--hit" id="roses">
-              <img class="product-card__image" src="images/bouquet-rose.svg" alt="Букет из красных роз">
+            <article class="product-card product-card--sale" id="roses">
+              <img class="product-card__image" src="images/bouquet-1.svg" alt="Букет красных роз">
               <div class="product-card__body">
-                <h2 class="product-card__title">Классика роз</h2>
+                <h2 class="product-card__title">Классика из роз</h2>
                 <p class="product-card__price">2 900 ₽</p>
-                <p class="product-card__text">11 роз, крафт, лента.</p>
-                <div class="product-card__actions">
-                  <a class="button" href="product.html">Открыть</a>
-                </div>
+                <p class="product-card__text">9 роз, упаковка крафт.</p>
+                <a class="button" href="product.html">Открыть</a>
               </div>
             </article>
 
             <article class="product-card" id="tulips">
-              <img class="product-card__image" src="images/bouquet-tulip.svg" alt="Букет тюльпанов">
+              <img class="product-card__image" src="images/bouquet-2.svg" alt="Букет тюльпанов">
               <div class="product-card__body">
-                <h2 class="product-card__title">Тюльпаны</h2>
-                <p class="product-card__price">2 200 ₽</p>
-                <p class="product-card__text">15 штук, пастельные тона.</p>
-                <div class="product-card__actions">
-                  <a class="button" href="order.html">Заказать</a>
-                </div>
+                <h2 class="product-card__title">Весенние тюльпаны</h2>
+                <p class="product-card__price">2 400 ₽</p>
+                <p class="product-card__text">15 тюльпанов в бумаге.</p>
+                <a class="button" href="order.html">Заказать</a>
               </div>
             </article>
 
-            <article class="product-card" id="mix">
-              <img class="product-card__image" src="images/bouquet-mix.svg" alt="Смешанный букет">
+            <article class="product-card" id="mixed">
+              <img class="product-card__image" src="images/bouquet-3.svg" alt="Букет полевых цветов">
               <div class="product-card__body">
-                <h2 class="product-card__title">Весенний микс</h2>
-                <p class="product-card__price">3 400 ₽</p>
-                <p class="product-card__text">Розы, эустома, зелень.</p>
-                <div class="product-card__actions">
-                  <a class="button" href="order.html">Заказать</a>
-                </div>
+                <h2 class="product-card__title">Полевой микс</h2>
+                <p class="product-card__price">1 900 ₽</p>
+                <p class="product-card__text">Сезонные цветы без жёсткой формы.</p>
+                <a class="button" href="order.html">Заказать</a>
               </div>
             </article>
           </div>
@@ -91,11 +84,9 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p class="footer__text">© 2026 Лепесток · учебный проект</p>
-      <p class="footer__text"><a href="contacts.html">Контакты</a></p>
+      <p class="footer__text">© 2026 Лепесток. Учебный проект.</p>
+      <p class="footer__text"><a href="index.html#contacts">Обратная связь</a></p>
     </div>
   </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>

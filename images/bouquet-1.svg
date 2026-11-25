@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" role="img" aria-label="Букет роз">
+  <rect width="400" height="300" fill="#e8f0e6"/>
+  <circle cx="160" cy="120" r="36" fill="#c45c6a"/>
+  <circle cx="210" cy="100" r="32" fill="#b84d5c"/>
+  <circle cx="250" cy="130" r="30" fill="#d46b78"/>
+  <rect x="190" y="150" width="12" height="90" fill="#4a6b45"/>
+  <rect x="170" y="160" width="10" height="70" fill="#5a7d54"/>
+  <rect x="220" y="155" width="10" height="75" fill="#4a6b45"/>
+  <ellipse cx="175" cy="180" rx="22" ry="10" fill="#6f9a66"/>
+  <ellipse cx="235" cy="185" rx="20" ry="9" fill="#6f9a66"/>
+</svg>

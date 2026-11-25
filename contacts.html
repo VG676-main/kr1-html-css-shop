@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Контакты цветочного магазина Лепесток: адрес, телефон, время работы.">
-  <title>Лепесток — контакты</title>
+  <meta name="description" content="Контакты цветочного магазина Лепесток: адрес, телефон, режим работы.">
+  <title>Контакты — Лепесток</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="page">
   <header class="header">
     <div class="container header__inner">
       <a class="header__logo" href="index.html">Лепесток</a>
-      <nav class="nav" aria-label="Основное меню">
+      <nav class="nav" aria-label="Основная навигация">
         <ul class="nav__list">
           <li><a class="nav__link" href="index.html">Главная</a></li>
           <li><a class="nav__link" href="catalog.html">Каталог</a></li>
@@ -19,13 +19,13 @@
           <li><a class="nav__link" href="order.html">Заявка</a></li>
           <li><a class="nav__link nav__link--active" href="contacts.html">Контакты</a></li>
           <li><a class="nav__link" href="index.html#advantages">Преимущества</a></li>
-          <li><a class="nav__link" href="index.html#popular">Популярное</a></li>
+          <li><a class="nav__link" href="index.html#popular">Популярные</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="section">
+  <main class="main">
     <div class="container">
       <nav class="breadcrumbs" aria-label="Хлебные крошки">
         <a href="index.html">Главная</a>
@@ -33,57 +33,36 @@
       </nav>
 
       <h1 class="section__title">Контакты</h1>
-      <p class="section__text">Можно написать или зайти в точку самовывоза.</p>
+      <p class="section__text">Свяжитесь с нами по телефону или оставьте заявку на сайте.</p>
 
-      <div class="contacts-grid">
-        <div class="contacts-card">
-          <h2 class="contacts-card__title">Магазин</h2>
-          <p class="contacts-card__text">г. Москва, ул. Цветочная, 12</p>
-          <p class="contacts-card__text">Пн–Вс: 9:00–21:00</p>
-          <p class="contacts-card__text">Тел.: +7 (495) 000-12-34</p>
-          <p class="contacts-card__text">Email: hello@lepestok.local</p>
-        </div>
-
-        <form class="form" id="contacts-form" novalidate>
-          <h2 class="contacts-card__title">Написать нам</h2>
-          <p class="form__hint">Короткое сообщение. Поля со звёздочкой обязательны.</p>
-
-          <div class="form__group">
-            <label class="form__label" for="c-name">Имя *</label>
-            <input class="form__input" id="c-name" name="name" type="text" required>
-            <span class="form__error"></span>
-          </div>
-
-          <div class="form__group">
-            <label class="form__label" for="c-phone">Телефон *</label>
-            <input class="form__input" id="c-phone" name="phone" type="tel" required>
-            <span class="form__error"></span>
-          </div>
-
-          <div class="form__group">
-            <label class="form__label" for="c-message">Сообщение *</label>
-            <textarea class="form__textarea" id="c-message" name="message" rows="4" required></textarea>
-            <span class="form__error"></span>
-          </div>
-
-          <button class="button" type="submit">Отправить</button>
-          <p class="form__success">Сообщение принято (учебный пример без отправки на сервер).</p>
-        </form>
+      <div class="contacts">
+        <section class="contacts__card">
+          <h2>Магазин</h2>
+          <ul class="contacts__list">
+            <li>г. Москва, ул. Садовая, 12</li>
+            <li>Телефон: +7 (999) 123-45-67</li>
+            <li>Email: hello@lepestok.local</li>
+          </ul>
+        </section>
+        <section class="contacts__card">
+          <h2>Режим работы</h2>
+          <ul class="contacts__list">
+            <li>Пн–Пт: 9:00–20:00</li>
+            <li>Сб–Вс: 10:00–18:00</li>
+            <li>Доставка: ежедневно</li>
+          </ul>
+          <p><a class="button" href="order.html">Оставить заявку</a></p>
+          <p><a href="index.html#contacts">К блоку обратной связи на главной</a></p>
+        </section>
       </div>
-
-      <p style="margin-top: 24px;">
-        <a class="button button--ghost" href="index.html#contacts">К блоку на главной</a>
-      </p>
     </div>
   </main>
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p class="footer__text">© 2026 Лепесток · учебный проект</p>
-      <p class="footer__text"><a href="order.html">Заявка</a></p>
+      <p class="footer__text">© 2026 Лепесток. Учебный проект.</p>
+      <p class="footer__text">Груздев В. Е., ЭФБО-10-25</p>
     </div>
   </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>
