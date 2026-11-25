@@ -1,110 +1,92 @@
 (function () {
+  var openButtons = document.querySelectorAll("[data-modal-open]");
   var modal = document.getElementById("order-modal");
-  var openButtons = document.querySelectorAll("[data-open-modal]");
-  var closeButtons = document.querySelectorAll("[data-close-modal]");
-  var form = document.getElementById("modal-order-form");
+  var form = document.getElementById("order-form");
+
+  if (!modal) {
+    return;
+  }
+
+  var overlay = modal.querySelector(".modal__overlay");
+  var closeButtons = modal.querySelectorAll("[data-modal-close]");
 
   function openModal() {
-    if (!modal) return;
-    modal.classList.add("modal--open");
+    modal.classList.add("is-open");
     document.body.classList.add("modal-open");
-    var firstInput = modal.querySelector("input, textarea, select");
-    if (firstInput) firstInput.focus();
+    var firstInput = modal.querySelector("input, select, textarea");
+    if (firstInput) {
+      firstInput.focus();
+    }
   }
 
   function closeModal() {
-    if (!modal) return;
-    modal.classList.remove("modal--open");
+    modal.classList.remove("is-open");
     document.body.classList.remove("modal-open");
   }
 
-  openButtons.forEach(function (btn) {
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
+  openButtons.forEach(function (button) {
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
       openModal();
     });
   });
 
-  closeButtons.forEach(function (btn) {
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
+  closeButtons.forEach(function (button) {
+    button.addEventListener("click", closeModal);
+  });
+
+  if (overlay) {
+    overlay.addEventListener("click", closeModal);
+  }
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && modal.classList.contains("is-open")) {
       closeModal();
-    });
+    }
   });
 
-  if (modal) {
-    modal.addEventListener("click", function (e) {
-      if (e.target === modal) closeModal();
-    });
+  if (!form) {
+    return;
   }
 
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeModal();
-  });
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-  function showError(input, message) {
-    input.classList.add("form__input--error");
-    var error = input.parentElement.querySelector(".form__error");
-    if (error) {
-      error.textContent = message;
-      error.classList.add("form__error--visible");
-    }
-  }
+    var nameInput = form.querySelector("#order-name");
+    var phoneInput = form.querySelector("#order-phone");
+    var commentInput = form.querySelector("#order-comment");
+    var isValid = true;
 
-  function clearError(input) {
-    input.classList.remove("form__input--error");
-    var error = input.parentElement.querySelector(".form__error");
-    if (error) {
-      error.textContent = "";
-      error.classList.remove("form__error--visible");
-    }
-  }
-
-  function validateForm(currentForm) {
-    var valid = true;
-    var name = currentForm.querySelector("[name='name']");
-    var phone = currentForm.querySelector("[name='phone']");
-    var message = currentForm.querySelector("[name='message']");
-
-    [name, phone, message].forEach(function (field) {
-      if (field) clearError(field);
-    });
-
-    if (name && name.value.trim().length < 2) {
-      showError(name, "Укажите имя (минимум 2 символа)");
-      valid = false;
-    }
-
-    if (phone) {
-      var digits = phone.value.replace(/\D/g, "");
-      if (digits.length < 10) {
-        showError(phone, "Введите телефон полностью");
-        valid = false;
+    function setInvalid(input, invalid) {
+      var group = input.closest(".form__group");
+      if (!group) {
+        return;
+      }
+      if (invalid) {
+        group.classList.add("form__group--invalid");
+        isValid = false;
+      } else {
+        group.classList.remove("form__group--invalid");
       }
     }
 
-    if (message && message.hasAttribute("required") && message.value.trim().length < 5) {
-      showError(message, "Напишите коротко, что нужно");
-      valid = false;
+    var nameValue = nameInput.value.trim();
+    setInvalid(nameInput, nameValue.length < 2);
+
+    var phoneValue = phoneInput.value.trim();
+    var phoneOk = /^(\+7|8)[\s\-]?\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}$/.test(phoneValue);
+    setInvalid(phoneInput, !phoneOk);
+
+    if (commentInput) {
+      setInvalid(commentInput, false);
     }
 
-    return valid;
-  }
+    if (!isValid) {
+      return;
+    }
 
-  function bindForm(currentForm) {
-    if (!currentForm) return;
-
-    currentForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (!validateForm(currentForm)) return;
-
-      var success = currentForm.querySelector(".form__success");
-      if (success) success.classList.add("form__success--visible");
-      currentForm.reset();
-    });
-  }
-
-  bindForm(form);
-  bindForm(document.getElementById("order-form"));
-  bindForm(document.getElementById("contacts-form"));
+    form.reset();
+    closeModal();
+    alert("Заявка принята. Мы перезвоним для подтверждения.");
+  });
 })();
