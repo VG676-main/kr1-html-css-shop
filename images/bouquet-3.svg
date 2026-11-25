@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" role="img" aria-label="Букет полевых цветов">
+  <rect width="400" height="300" fill="#f0f4ed"/>
+  <circle cx="180" cy="120" r="18" fill="#f2d35b"/>
+  <circle cx="220" cy="105" r="16" fill="#f6e07a"/>
+  <circle cx="255" cy="125" r="17" fill="#e8c84a"/>
+  <circle cx="200" cy="145" r="14" fill="#7eb6d9"/>
+  <circle cx="240" cy="150" r="13" fill="#6aa8cf"/>
+  <rect x="195" y="160" width="8" height="85" fill="#4a6b45"/>
+  <rect x="230" y="155" width="8" height="90" fill="#5a7d54"/>
+</svg>
